@@ -1,0 +1,5 @@
+<% if @model.getError(): %>
+  <div class='fr_error'>
+    <%= @model.getError() %>
+  </div>
+<% end %>

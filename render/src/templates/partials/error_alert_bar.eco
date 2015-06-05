@@ -1,0 +1,3 @@
+<% unless @form_renderer.areAllPagesValid(): %>
+  <div class='fr_error_alert_bar'>Your response has validation errors.</div>
+<% end %>

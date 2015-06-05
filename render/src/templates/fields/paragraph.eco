@@ -1,0 +1,4 @@
+<textarea
+   id="<%= @getDomId() %>"
+   class="size_<%= @model.get('field_options.size') %>"
+   data-rv-input='model.value' />

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <title>formrenderer-base</title>
+  <link rel="stylesheet" href="css/cardinal.css" />
+  <link rel="stylesheet" href="../dist/formrenderer.css" />
+  <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css" />
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #eee;
+  }
+
+  form {
+    margin: 0;
+  }
+
+  #container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+  }
+  .fr_bottom_bar{
+    display:none !important;
+  }
+textarea {  
+  width: 560px !important;
+  height: 200px !important;
+ } 
+  </style>
+</head>
+<body>
+  <div id='container'>
+   <h1>Preview de tu Encuesta </h1>
+    <form data-formrenderer></form>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="../dist/formrenderer.js"></script>
+  <script src="../test/support/fixtures.js"></script>
+
+  <script>
+var json;
+    $(function(){
+
+      FormRenderer.BUTTON_CLASS = 'button button-primary'
+
+      FormRenderer.prototype.save = function(options){
+        console.log(this.getValue());
+        this.state.set({
+          hasChanges: false
+        });
+        if (options && options.success) {
+          options.success();
+        }
+      };
+
+      
+      //})
+
+    });
+	$( document ).ready(function() {
+	   json =getParameterByName("json");
+	console.log("JS",JSON.parse(json))
+	mostrarPreview()
+
+	});
+	function mostrarPreview() {
+	console.log("entra mostrar")
+        //$('.choose').hide()
+        var id = $(this).data('form');
+	var json2=JSON.parse(json)
+        //if (id == 'short') {
+		var campos=Fixtures.FormRendererOptions.SHORT()
+	console.log("!",Fixtures.FormRendererOptions.SHORT())
+	console.log("@",json["fields"],json2)
+		campos["response_fields"]=json2["fields"]
+          new FormRenderer(_.extend(campos, {
+            "afterSubmit": { method: 'page', html: 'You did it!' }
+          }))
+      
+		}
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+  </script>
+
+</body>
+</html>

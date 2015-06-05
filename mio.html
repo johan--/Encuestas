@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if IE 9]>					<html class="ie9 no-js" lang="en-US">  <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Google Web Fonts
+		================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,500,700%7cCourgette%7cRaleway:400,700,500%7cCourgette%7cLato:700' rel='stylesheet' type='text/css'>
+
+    <!-- Basic Page Needs
+		================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Forms</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+		================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+		================================================== -->
+    <link rel="stylesheet" href="css/tmm_form_wizard_style_demo.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/tmm_form_wizard_layout.css" />
+    <link rel="stylesheet" href="css/fontello.css" />
+    <link rel="stylesheet" href="../vendor/css/vendor.css" />
+    <link rel="stylesheet" href="../dist/formbuilder.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+    <script src="../vendor/js/vendor.js"></script>
+<script src="formbuilder.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="dateSpanish.js"></script>
+
+
+
+
+
+    <!--[if lt IE 9]>
+				<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+    <script src="js/tmm_form_wizard_custom.js"></script>
+<style>
+.ui-autocomplete{
+	overflow-y: scroll;
+	height: 127px
+  }
+</style>
+</head>
+
+<body>
+
+
+    <!-- - - - - - - - - - - - - Content - - - - - - - - - - - - -  -->
+
+
+    <div id="content">
+
+        <div class="form-container" style="
+			    width: 2000x" ;>
+
+            <div id="tmm-form-wizard" class="container substrate" style="
+				    width: 2000px" ;>
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <h2 class="form-login-heading">Generador de Encuestas<span></span></h2>
+                    </div>
+
+                </div>
+                <!--/ .row-->
+
+                <div class="row stage-container">
+                    <div class="stage tmm-current col-md-3 col-sm-3" id="stage1">
+                        <div class="stage-header head-icon head-icon-lock"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Informacion General</h3>
+                            <div class="stage-info">
+                                Ingrese informacion general de la encuesta
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+
+
+
+
+                    <div class="stage  col-md-3 col-sm-3" id="stage2">
+                        <div class="stage-header head-icon head-icon-user"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Seleccion Idiomas</h3>
+                            <div class="stage-info">
+                                Elija los idiomas deseados de la encuestas
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+                    <div class="stage  col-md-3 col-sm-3" id="stage3">
+                        <div class="stage-header head-icon head-icon-payment"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Texto Introduccion</h3>
+                            <div class="stage-info">
+                                Ingrese el texto introductorio
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+
+
+
+
+                    <div class="stage col-md-3 col-sm-3" id="stage4">
+                        <div class="stage-header head-icon head-icon-details"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Generar Preguntas</h3>
+                            <div class="stage-info">
+                                Cree las preguntas se su encuesta
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+                    <div class="stage  col-md-3 col-sm-3" id="stage5">
+                        <div class="stage-header head-icon head-icon-payment"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Texto Finalizacion</h3>
+                            <div class="stage-info">
+                                Ingrese el texto Final
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+                    <div class="stage col-md-3 col-sm-3" id="stage6">
+                        <div class="stage-header head-icon head-icon-details"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Confirma la encuesta</h3>
+                            <div class="stage-info">
+                                Guarda la encuesta
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+
+                </div>
+                <!--/ .row-->
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="form-header">
+
+                            <div class="form-title form-icon title-icon-user">
+                                <b>Informacion</b> General
+                            </div>
+                            <div class="steps">
+
+                            </div>
+
+                        </div>
+                        <!--/ .form-header-->
+
+                    </div>
+
+                </div>
+                <!--/ .row-->
+
+                <form action="/" role="form">
+
+                    <div class="form-wizard" id="paso1">
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6" style="display:block">
+                                <fieldset class="input-block">
+                                    <label for="first-name">Plantillas</label>
+                                    <input name="plantillas" type="text" id="plantillas" placeholder="" />
+
+                                </fieldset>
+                                <!--/ .input-first-name-->
+                            </div>
+
+
+                        </div>
+                        <!--/ .row-->
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-4 col-sm-4">
+
+
+
+
+                                        <div class="input-block">
+                                            <label>Cliente</label>
+                                            <input name="clientes" type="text" id="clientes" placeholder="" required />
+                                        </div>
+                                        <!--/ .dropdown-->
+
+                                    </div>
+                                    <!--/ .input-role-->
+                                    <div class="col-md-4 col-sm-4" style="width: 10%" ;>
+
+
+
+
+                                        <div class="input-block">
+                                            <div>
+                                                <button class="button button-" type="button" id="mostrarImagenCliente" style="
+    margin-top: 27px;
+"><span id="textoCliente">><b></b></span>
+                                                </button>
+                                            </div>
+                                            <!--/ .dropdown-->
+
+
+                                        </div>
+                                        <!--/ .input-role-->
+
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+
+
+
+
+                                        <div class="input-block">
+                                            <label>Evento</label>
+                                            <input name="eventos" type="text" id="eventos" placeholder="" required />
+
+                                        </div>
+                                        <!--/ .dropdown-->
+
+                                    </div>
+                                    <!--/ .input-role-->
+                                    <div class="col-md-4 col-sm-4" style="width: 10%" ;>
+
+
+
+
+                                        <div class="input-block">
+                                            <div>
+                                                <button class="button button-" type="button" id="mostrarImagenEvento" style="
+    margin-top: 27px;
+"><span id="textoEvento">><b></b></span>
+                                                </button>
+                                            </div>
+                                            <!--/ .dropdown-->
+
+
+                                        </div>
+                                        <!--/ .input-role-->
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4" style="margin-left: 20px;display: none; background-color: rgb(241, 229, 229);border:  rgb(43, 157, 194);border-width: initial;border-style: inset;" id="formEvento">
+
+                                <img id="uploadPreview" style="width: 200px; height: 200px;" />
+                                <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+                                <button class="button button-" type="button" id="nuevoEvento" style="
+    margin-top: 27px;
+"><span id="">Agregar Evento<b></b></span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+                        <div class="row" style="margin-left: 1px;display: none; background-color: rgb(241, 229, 229);border:  rgb(43, 157, 194);;border-width: initial;border-style: inset;" id="formCliente">
+                            <div class="col-md-4 col-sm-4">
+
+                                <img id="uploadPreview" style="width: 200px; height: 200px;" />
+                                <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+                                <button class="button button-" type="button" id="clienteNuevo" style="
+    margin-top: 27px;
+"><span id="">Agregar Cliente<b></b></span>
+                                </button>
+
+
+                            </div>
+                            <div class="col-md-6 col-sm-6" style="display: block;">
+                                <fieldset class="input-block">
+                                    <label for="comentarioCliente">Comentario</label>
+                                    <textarea id="comentarioCliente" name="comentarioCliente" rows="4" cols="50" style="margin: 0px; height: 175px; width: 538px;">
+                                    </textarea>
+
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6">
+                                <fieldset class="input-block">
+                                    <label for="first-name">Objetivo</label>
+                                    <input name="objetivo" type="text" id="first-name" placeholder="Objetivo" required />
+
+                                </fieldset>
+                                <!--/ .input-first-name-->
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <fieldset class="input-block" style="display:none">
+                                    <label for="last-name">Multiples respuestas por usuario</label>
+                                    <input name="multiples" type="checkbox" id="multiple" placeholder="Surname" required />
+
+                                </fieldset>
+                                <!--/ .input-first-name-->
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-4 col-sm-4">
+                                <fieldset class="input-block">
+
+                                    <label for="zip-code">Fecha Inicio</label>
+                                    <input name="fechaInicio" type="text" id="fechaInicio" class="datepicker " placeholder="Inicio en.." required readonly='true'/>
+
+                                </fieldset>
+                                <!--/ .code-->
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <fieldset class="input-block">
+                                    <label for="zip-code">Fecha Finalizacion</label>
+                                    <input name="fechaFinal" type="text" id="fechaFinal" class="datepicker " placeholder="Finaliza en.." required readonly='true'/>
+
+                                </fieldset>
+                                <!--/ .code-->
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+
+
+                    </div>
+
+
+                    <div class="form-wizard" id="paso2" style="display:none">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <fieldset class="input-block">
+                                            <label>Idiomas</label>
+                                            <div class="dropdown">
+                                                <select id="idiomasSeleccion" name="idiomas" class="dropdown-select" multiple="true" style="
+    height: 100%;
+">
+                                                </select>
+                                                <fieldset id="testIdioma" class="input-block" style="display:none"></fieldset>
+                                            </div>
+                                            <!--/ .input-dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+                                </div>
+                                <!--/ .row-->
+
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-wizard-->
+                    <div class="form-wizard" id="paso3" style="display:none">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <fieldset class="input-block" id="textoInicio">
+
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+                                </div>
+                                <!--/ .row-->
+
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-wizard-->
+                    <div class="form-wizard" id="paso4" style="display:none">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <a href="#" id="verPreview" style="
+    font-weight: bold;
+    font-size: x-large;
+">Ver Preview Encuestas</a>
+                                        <div class='fb-main'></div>
+                                    </div>
+
+                                </div>
+                                <!--/ .row-->
+
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-wizard-->
+                    <div class="form-wizard" id="paso5" style="display:none">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <fieldset class="input-block" id="textoFinal">
+
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+                                </div>
+                                <!--/ .row-->
+
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-wizard-->
+                    <div class="form-wizard" id="paso6" style="display:none">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <fieldset class="input-block elementosGuardar">
+
+                                            <button type="button" style="color: #146B98;font-size: x-large;" id="guardar">Guardar</button>
+<img id="imagenCarga" src="http://www.csplglobal.com/images1/ux/bkg-loading-wheel.gif" alt="Smiley face" height="21" width="21" style="display: none;">
+                                            <p>
+                                                <label for="plantilla" style="
+    font-size: 24px;">Guardar como plantilla</label>
+                                                <input type="checkbox" id="plantilla" class="deseleccionado" placeholder="Surname" required="">
+                                            </p>
+
+
+                                            <input type="text" id="nombrePlantilla" placeholder="Nombre Plantilla" required="" style="display: none;">
+
+
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+                                <!--/ .row-->
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <fieldset class="input-block linksFinal">
+
+
+
+
+
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-wizard-->
+
+                    <div class="prev">
+                        <button class="button button-control" type="button" id="anterior"><span class="botonAnteriorTexto">Paso Anterior<b></b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+					<div class="next" style="
+					    position: inherit;
+					">
+                        <button class="button button-control" type="button" id="cancelarEncuesta" style="
+						    margin-left: 50px;
+						"><span>Cancelar <b></b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+                    <div class="next">
+                        <button class="button button-control" type="button" id="proximo"><span>Proximo Paso <b></b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+
+
+                </form>
+                <!--/ form-->
+
+
+            </div>
+            <!--/ .container-->
+
+        </div>
+        <!--/ .form-container-->
+
+    </div>
+    <!--/ #content-->
+
+
+    <!-- - - - - - - - - - - - end Content - - - - - - - - - - - - - -->
+
+
+
+
+    <script>
+        var idiomas = [];
+        var idiomasID = [];
+        var clienteSeleccionado = 0;
+        var eventoSeleccionado = 0;
+		var valuePresentInSearchList=false
+		var eventValuePresentInSearchList=false
+
+		var idiomasSeleccionados=0
+        $(document).ready(function() {
+
+            getClientes();
+            getIdiomas();
+            getPlantillas();
+            //getEventos();
+            var pasoNumero = 1;
+            var cantidadElementos = 0;
+            $(".prev").css("display", "none")
+            $(".steps").append("Paso 1 de 6")
+            $("#plantilla").click(function() {
+                if ($(this).hasClass("deseleccionado")) {
+                    $(this).removeClass("deseleccionado")
+                    $("#nombrePlantilla").css("display", "block")
+                } else {
+                    $(this).addClass("deseleccionado")
+                    $("#nombrePlantilla").css("display", "none")
+                }
+            });
+
+			 $("#cancelarEncuesta").click(function() {
+					window.location.href="http://belasoft.com.ar/encuestarubra/RubraEncuesta7/verEncuesta.php"
+				})
+            $("#proximo").click(function() {
+                if (validate(pasoNumero)) {
+                    $("#paso" + pasoNumero).css("display", "none")
+                    $("#stage" + pasoNumero).removeClass("tmm-current")
+                    $("#stage" + pasoNumero).addClass("tmm-success")
+
+
+                    if (pasoNumero == 2) {
+                        idiomas = []
+                        idiomasID = [];
+                        $('#idiomasSeleccion :selected').each(function(i, selected) {
+                            var foo = [];
+                            foo[i] = $(selected).text();
+                            val = $(selected).val();
+                            if (cantidadElementos == 0) {
+                                idiomas.push(foo[i])
+                                idiomasID.push(val)
+                                cantidadElementos++
+                            } else {
+                                idiomas.push(foo[i])
+                                idiomasID.push(val)
+                            }
+
+
+                        });
+                        $('#testIdioma').find("input:checked").each(function(i, selected) {
+                            console.log("att", $(this).attr("nombre"), $(this).attr("ident"))
+                        })
+
+                    }
+                    console.log("ID", idiomas)
+                    pasoNumero++;
+                    if (pasoNumero == 3) {
+                        //$("#textoInicio").empty()
+                        $(".noBorrar").removeClass("noBorrar")
+                        for (var i in idiomas) {
+                            if ($('input[name="textoIntroduccion"][idioma=' + idiomasID[i] + ']').length == 0) {
+                                console.log("ENTRA PARA", idiomasID[i])
+                                console.log("Selector", $('input[idioma=' + idiomasID[i] + ']'))
+                                $("#textoInicio").append('<label>Texto Introduccion (' + idiomas[i] + ')</label><input name="textoIntroduccion" type="text"  placeholder="Texto" required idioma=' + idiomasID[i] + ' class="noBorrar"/>')
+                            } else {
+                                $('input[name="textoIntroduccion"][idioma=' + idiomasID[i] + ']').addClass("noBorrar")
+                            }
+                        }
+                        //Ahora borro todos los elementos que no tengan la clase borrar,junto con sus padres,que son los Labels.Elementos de texto
+                        //de cierto Idioma que fueron borrados
+                        $('input[name="textoIntroduccion"]').not('.noBorrar').prev().remove();
+                        $('input[name="textoIntroduccion"]').not('.noBorrar').remove();
+
+
+
+                    }
+                    if (pasoNumero == 5) {
+                        //$("#textoFinal").empty()
+                        $(".noBorrarFinal").removeClass("noBorrarFinal")
+                        for (var i in idiomas) {
+                            if ($('input[name="textoFinal"][idioma=' + idiomasID[i] + ']').length == 0) {
+                                $("#textoFinal").append('<label>Texto Final (' + idiomas[i] + ')</label><input name="textoFinal" type="text" placeholder="Texto" required idioma=' + idiomasID[i] + ' class="noBorrarFinal"/ />')
+                            } else {
+                                $('input[name="textoFinal"][idioma=' + idiomasID[i] + ']').addClass("noBorrarFinal")
+                            }
+                        }
+
+
+                        //Ahora borro todos los elementos que no tengan la clase borrar,junto con sus padres,que son los Labels.Elementos de texto
+                        //de cierto Idioma que fueron borrados
+                        $('input[name="textoFinal"]').not('.noBorrarFinal').prev().remove();
+                        $('input[name="textoFinal"]').not('.noBorrarFinal').remove();
+                    }
+                    if (pasoNumero == 6) {
+                        $(".next").css("display", "none")
+                    } else {
+                        $(".next").css("display", "block")
+                    }
+
+                    if (pasoNumero == 1) {
+                        $(".prev").css("display", "none")
+                    } else {
+                        $(".prev").css("display", "block")
+                    }
+                    cambiarTextosTitulo()
+                    $("#paso" + pasoNumero).css("display", "block")
+                    $("#stage" + pasoNumero).addClass("tmm-current")
+                }
+                $(".steps").empty()
+                $(".steps").append("Paso " + pasoNumero + " de 6 ")
+            });
+            $("#anterior").click(function() {
+
+			   var volver="Volver al Menu";
+			   console.log("valCoton",$(this).text(),volver)
+                if (!$(".botonAnteriorTexto").hasClass("menu") ) {
+				console.log("ENTRA ANTE")
+                    $("#paso" + pasoNumero).css("display", "none")
+                    $("#stage" + pasoNumero).removeClass("tmm-current")
+                    pasoNumero--;
+                    $("#paso" + pasoNumero).css("display", "block")
+                    $("#stage" + pasoNumero).addClass("tmm-current")
+                    $("#stage" + pasoNumero).removeClass("tmm-success")
+                    $(".steps").empty()
+                    $(".steps").append("Paso " + pasoNumero + " de 6 ")
+                    if (pasoNumero == 1) {
+                        $(".prev").css("display", "none")
+                    } else {
+                        $(".prev").css("display", "block")
+                    }
+                    if (pasoNumero == 6) {
+                        $(".next").css("display", "none")
+                    } else {
+                        $(".next").css("display", "block")
+                    }
+
+                    cambiarTextosTitulo()
+
+                } else {
+                    window.location.href = "http://belasoft.com.ar/encuestarubra/RubraEncuesta7/";
+                }
+            });
+
+            $(function() {
+                fb = new Formbuilder({
+                    selector: '.fb-main',
+                    bootstrapData: [
+
+                    ]
+                });
+
+                fb.on('save', function(payload) {
+                    console.log(payload);
+                    formInfo = payload;
+                })
+            });
+
+            $("#verPreview").click(function() {
+                window.open("http://belasoft.com.ar/encuestarubra/render/examples/index.html?json=" + formInfo);
+                //
+
+            });
+
+            function search_array(array, valuetofind) {
+                for (i = 0; i < array.length; i++) {
+                    if (array[i]['name'] === valuetofind) {
+                        return array[i]['value'];
+                    }
+                }
+            }
+
+            function searchArrays2(array, valuetofind) {
+                var datos = []
+                console.log("valueTOfind", valuetofind)
+                for (i = 0; i < array.length; i++) {
+                    if (array[i]['name'] === valuetofind) {
+                        console.log("ENCONTRO")
+                        datos.push(array[i]['value']);
+                    }
+                }
+                return datos
+                    //return -1;
+            }
+
+            function cambiarTextosTitulo() {
+                $(".form-title").empty()
+                if (pasoNumero == 1) {
+                    $(".form-title").append("Informacion General")
+                }
+                if (pasoNumero == 2) {
+                    $(".form-title").append("Idiomas")
+                }
+                if (pasoNumero == 3) {
+                    $(".form-title").append("Textos Iniciales")
+                }
+                if (pasoNumero == 4) {
+                    $(".form-title").append("Creacion Encuesta")
+                }
+                if (pasoNumero == 5) {
+                    $(".form-title").append("Textos Finales")
+                }
+                if (pasoNumero == 6) {
+                    $(".form-title").append("Confirmar")
+                }
+
+            }
+
+            function getTextoInicial() {
+                var datos = []
+                $('[name="textoIntroduccion"]').each(function() {
+                    datos.push({
+                        "valor": $(this).val(),
+                        "idioma": $(this).attr("idioma")
+                    });
+
+
+                });
+                console.log("DATOS", datos)
+                return datos
+            }
+
+            function getTextoFinal() {
+                var datos = []
+                $('[name="textoFinal"]').each(function() {
+                    datos.push({
+                        "valor": $(this).val(),
+                        "idioma": $(this).attr("idioma")
+                    });
+
+
+                });
+                console.log("DATOS", datos)
+                return datos
+            }
+            $("#guardar").click(function() {
+                console.log("ANTES", getTextoInicial())
+                var datosForm = $("form").serializeArray();
+                //le agrego datos del FormBuilder
+                var objetoPrueba = {}
+                    //objetoPrueba.cliente=search_array(datosForm,"clientes")
+                    // objetoPrueba.evento=search_array(datosForm,"eventos")
+                objetoPrueba.cliente = clienteSeleccionado;
+                objetoPrueba.evento = eventoSeleccionado;
+                objetoPrueba.objetivo = search_array(datosForm, "objetivo")
+                objetoPrueba.fechaInicio = search_array(datosForm, "fechaInicio")
+                objetoPrueba.fechaFinal = search_array(datosForm, "fechaFinal")
+                objetoPrueba.textoFinal = getTextoFinal()
+                objetoPrueba.textoInicial = getTextoInicial()
+                objetoPrueba.nombrePlantilla = $("#nombrePlantilla").val()
+                objetoPrueba.id = 0;
+                //Recuperar Info Idiomas ,Textos Iniciales y Finales
+                objetoPrueba.idiomas = searchArrays2(datosForm, "idiomas")
+                    // objetoPrueba.idiomas.push("1")
+                objetoPrueba.form = formInfo
+                console.log("prueba", objetoPrueba)
+                datosForm.push(JSON.parse(formInfo))
+                console.log("datpsFPr,", datosForm)
+				$("#imagenCarga").css("display", "block")
+                $.ajax({
+                    url: '../RubraEncuesta7/clases/guardarEncuesta.php',
+                    type: 'post',
+                    //data: JSON.stringify(datosForm),
+                    data: {
+                        "info": JSON.stringify(objetoPrueba)
+                    },
+                    //contentType: 'application/json; charset=utf-8',
+                    //dataType: 'json',
+                    //async: false,
+                    success: function(msg) {
+					var volver="Volver al Menu";
+                        //Acomodo Pantalla
+                        $(".stage-container").remove()
+                        $(".elementosGuardar").remove()
+                        $(".steps").remove()
+                        $("#proximo").remove();
+                        $(".botonAnteriorTexto").text(volver)
+						$(".botonAnteriorTexto").addClass("menu")
+                        $(".form-title").empty()
+                        $(".form-title").append("<b>En hora buena!Encuesta generada!</b>")
+						console.log("LINKS",msg)
+
+                        console.log("SDADA2", JSON.parse(msg))
+                        var valores = JSON.parse(msg);
+                        $(".linksFinal").append("A continuacion ,las encuestas generadas:")
+                        for (var i in valores) {
+                            $(".linksFinal").append('<p><a href=' + valores[i]["link"] + '>Encuesta ' + valores[i]["idiomaNombre"] + '</a></p>')
+                        }
+                        //console.log("MENSA",msg)
+                    }
+                });
+            });
+
+            $("#mostrarImagenEvento").click(function() {
+
+
+                if ($("#formEvento").hasClass("visible")) {
+                    $("#formEvento").css("display", "none")
+                    $("#formEvento").removeClass("visible")
+                    $('#comboEventos').attr('disabled', false);
+                    $("#textoEvento").text("+")
+                } else {
+                    $("#formEvento").css("display", "block")
+                    $('#comboEventos').attr('disabled', true);
+                    $("#formEvento").addClass("visible")
+                    $("#textoEvento").text("<")
+                }
+
+
+            });
+            $("#mostrarImagenCliente").click(function() {
+
+
+                if ($("#formCliente").hasClass("visible")) {
+                    $("#formCliente").css("display", "none")
+                    $("#formCliente").removeClass("visible")
+                        // $('#comboCliente').attr('disabled',false);
+                    $("#textoCliente").text("+")
+                } else {
+                    $("#formCliente").css("display", "block")
+                        //$('#comboClientes').attr('disabled',true);
+                    $("#formCliente").addClass("visible")
+                    $("#textoCliente").text("<")
+                }
+
+
+            });
+
+            $("#clienteNuevo").click(function() {
+                if ($("#clientes").val() == "") {
+                    alert("Primero Elija un Cliente!")
+                } else {
+                    guardarCliente()
+                }
+
+            });
+
+            function guardarCliente() {
+                var objetoCliente = {}
+
+                objetoCliente.nombre = $("#clientes").val()
+                objetoCliente.comentario = $("#comentarioCliente").val()
+                $.ajax({
+                    url: '../RubraEncuesta7/clases/guardarCliente.php',
+                    type: 'post',
+                    data: {
+                        "info": JSON.stringify(objetoCliente)
+                    },
+
+                    success: function(msg) {
+                        //alert("Cliente Guardado!")
+						 console.log("clieneID", JSON.parse(msg))
+                         var valorParseado = JSON.parse(msg);
+                        $("#formCliente").css("display", "none")
+                        $("#formCliente").removeClass("visible")
+                            // $('#comboCliente').attr('disabled',false);
+                        $("#textoCliente").text("+")
+						clienteSeleccionado=valorParseado["id"]
+						valuePresentInSearchList=true
+					  $("#clientes").css("border-color", "#c4cdcf")
+						getClientes();
+                    }
+                });
+
+            };
+
+            function guardarEvento() {
+                var objetoEvento = {}
+
+                objetoEvento.nombre = $("#eventos").val()
+                objetoEvento.idCliente = clienteSeleccionado;
+                $.ajax({
+                    url: '../RubraEncuesta7/clases/guardarEvento.php',
+                    type: 'post',
+                    data: {
+                        "info": JSON.stringify(objetoEvento)
+                    },
+
+                    success: function(msg) {
+                        alert("Evento Guardado!")
+ 						var valorParseado = JSON.parse(msg);
+						eventoSeleccionado=valorParseado["id"]
+						eventValuePresentInSearchList=true
+                        $("#formEvento").css("display", "none")
+                        $("#formEvento").removeClass("visible")
+                        $('#comboEventos').attr('disabled', false);
+                        $("#textoEvento").text("+")
+ 						$("#eventos").css("border-color", "#c4cdcf")
+						getEventos(clienteSeleccionado)
+                    }
+                });
+
+            };
+
+
+
+            $("#nuevoEvento").click(function() {
+                var guardar = true;
+                if ($("#clientes").val() == "") {
+                    guardar = false;
+                    alert("Primero Elija un Cliente!")
+                }
+                if ($("#eventos").val() == "") {
+                    guardar = false;
+                    alert("El nuevo evento no puede ser vacio!")
+                }
+                if (guardar == true) {
+                    guardarEvento()
+                }
+
+            });
+
+
+
+
+            $('#fechaInicio').datepicker({
+                format: 'mm/dd/yyyy',
+                onSelect: function(selected) {
+                    $("#fechaFinal").datepicker("option", "minDate", selected)
+
+                }
+            })
+
+
+            $('#fechaFinal').datepicker({
+                format: 'mm/dd/yyyy',
+                onSelect: function(selected) {
+                    $("#fechaInicio").datepicker("option", "maxDate", selected)
+
+                }
+            })
+
+
+        });
+        function updateClientes(){
+		$("#clientes").autocomplete({
+                        source: clientes
+                    });
+					valuePresentInSearchList=true
+
+		}
+        function getClientes() {
+
+            $.ajax({
+                url: '../RubraEncuesta7/clases/getClientes.php',
+                type: 'get',
+
+                success: function(msg) {
+                    console.log("cliene", JSON.parse(msg))
+                    var valorParseado = JSON.parse(msg);
+					clientes=valorParseado["clientes"];
+					console.log("CLI",clientes)
+                    $("#clientes").autocomplete({
+                        source: clientes,
+						minLength: 0,
+						scroll: true,
+                        select: function(event, ui) {
+						 valuePresentInSearchList = true;
+                            $("#eventos").val('');
+                            clienteSeleccionado = ui.item.id;
+                            getEventos(ui.item.id);
+                        },
+						    response: function( event, ui ) {
+							console.log("holaaa")
+							        valuePresentInSearchList = false;
+              jQuery.each( ui.content, function( key, value ) {
+			  //console.log("afuera For",key,value)
+			   if( value["label"] ==$("#clientes").val())
+                      {
+					  console.log("IGUAL ES ",value["label"])
+                      valuePresentInSearchList = true;
+                      }
+                  //for( k in value ) {
+				 //  console.log("EN",k,value)
+                   // alert( "key is " + [ k ] + ", value is " + value[ k ] );
+                      // CHECK HERE IF INPUT VALUE IS EXACTLTY MATCH
+                      // YOU CAN ALSO DO PATTERN MATCH HERE
+                     // if( value[ k ] ==$("#tags").val())
+                    //  {
+
+                   //   }
+
+             // }
+          });
+       }
+                    }).click(function() {
+                $(this).autocomplete("search", "");
+            })
+
+                }
+            });
+
+        };
+
+        function getIdiomas() {
+
+            $.ajax({
+                url: '../RubraEncuesta7/clases/getIdiomas.php',
+                type: 'get',
+
+                success: function(msg) {
+                    console.log("idiomas", msg)
+                    var valorParseado = JSON.parse(msg);
+                    for (var i in valorParseado["idiomas"]) {
+                        $("#idiomasSeleccion").append('<option value=' + valorParseado["idiomas"][i]["id"] + '>' + valorParseado["idiomas"][i]["nombre"] + '</option>')
+                        $("#testIdioma").append('<input name="idiomasOpciones" ident ="' + valorParseado["idiomas"][i]["id"] + '" nombre=' + valorParseado["idiomas"][i]["nombre"] + ' type="checkbox" placeholder="Surname" required />' + valorParseado["idiomas"][i]["nombre"] + '<br>')
+
+
+
+
+                        //  var valorParseado=JSON.parse(msg);
+                    }
+
+                }
+            });
+
+        };
+
+        function getPlantillas() {
+
+            $.ajax({
+                url: '../RubraEncuesta7/clases/getPlantillas.php',
+                type: 'get',
+
+                success: function(msg) {
+                    console.log("Plantillas", JSON.parse(msg))
+                    var valorParseado = JSON.parse(msg);
+                    $("#plantillas").autocomplete({
+                        source: valorParseado["plantillas"],
+						minLength: 0,
+						scroll: true,
+                        select: function(event, ui) {
+                            obtenerPlantilla(ui.item.id);
+                        }
+                    }).click(function() {
+                $(this).autocomplete("search", "");
+            });
+
+
+                }
+            });
+
+        };
+
+        function getEventos(idCliente) {
+
+            var eventoObjeto = {}
+                //objetoPrueba.cliente=search_array(datosForm,"clientes")
+                // objetoPrueba.evento=search_array(datosForm,"eventos")
+            eventoObjeto.idCliente = idCliente;
+            $.ajax({
+                url: '../RubraEncuesta7/clases/getEventos.php',
+                type: 'post',
+                data: {
+                    "info": JSON.stringify(eventoObjeto)
+                },
+                success: function(msg) {
+                    var valorParseado = JSON.parse(msg);
+					console.log("evetos",valorParseado["eventos"])
+                    $("#eventos").autocomplete({
+                        source: valorParseado["eventos"],
+						minLength: 0,
+						scroll: true,
+                        select: function(event, ui) {
+                            //console.log("Evento",ui.item.id)
+                            eventoSeleccionado = ui.item.id;
+							eventValuePresentInSearchList = true;
+							console.log("SELECCINO el",eventoSeleccionado)
+                        },
+						    response: function( event, ui ) {
+							console.log("holaaa")
+							        eventValuePresentInSearchList = false;
+              jQuery.each( ui.content, function( key, value ) {
+			  //console.log("afuera For",key,value)
+			   if( value["label"] ==$("#eventos").val())
+                      {
+					  console.log("IGUAL ES ",value["label"])
+                      eventValuePresentInSearchList = true;
+                      }
+
+          })}
+
+                    }).click(function() {
+                $(this).autocomplete("search", "");
+            });
+
+                }
+            });
+
+        };
+
+        function obtenerPlantilla(idPlantilla) {
+            var objetoPrueba = {}
+                //objetoPrueba.cliente=search_array(datosForm,"clientes")
+                // objetoPrueba.evento=search_array(datosForm,"eventos")
+            objetoPrueba.id = idPlantilla;
+            $.ajax({
+                url: '../RubraEncuesta7/clases/getPlantillaById.php',
+                type: 'post',
+                data: {
+                    "info": JSON.stringify(objetoPrueba)
+                },
+                success: function(msg) {
+                    console.log("Datos Plantilla", msg)
+                    mostrarInfoPlantilla(msg)
+                }
+            });
+        }
+
+        function mostrarInfoPlantilla(datos) {
+            var valorParseado = JSON.parse(datos);
+			idiomasSeleccionados=0;
+            $('#idiomasSeleccion option').removeAttr("selected");
+            $('#idiomasSeleccion option').each(function(i, selected) {
+                var foo = [];
+                texto = $(this).val();
+
+                for (var idioma in valorParseado.idiomas) {
+                    if (texto == valorParseado.idiomas[idioma]) {
+						idiomasSeleccionados++;
+                        $('#idiomasSeleccion option[value=' + texto + ']').attr('selected', true);
+                    }
+                }
+
+            });
+            var fields = valorParseado["form"]["fields"]
+			//Tengo que guardar esto ,para que formInfo tenga un valor,porque si no modifican nada,queda en vacio la variable
+            var test = new Object()
+			test["fields"] = valorParseado["form"]["fields"]
+            formInfo = JSON.stringify(test)
+			//End
+            $(function() {
+                fb = new Formbuilder({
+                    selector: '.fb-main',
+                    bootstrapData: fields
+                });
+
+                fb.on('save', function(payload) {
+                    console.log("Payload", payload);
+                    formInfo = payload;
+                })
+            });
+
+
+
+
+        }
+
+
+
+
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                document.getElementById("uploadPreview").src = oFREvent.target.result;
+            };
+        };
+
+        function validate(step) {
+	console.log("ENTRA VAL")
+            var esValido = true
+            if (step == 1) {
+                $('#paso1').find("input").each(function() {
+                    if ($(this).val() == "" && $(this).attr('id') != "uploadImage"&& $(this).attr('id') != "plantillas") {
+                        $(this).css("border-color", "red")
+                        esValido = false;
+                    } else {
+                        $(this).css("border-color", "#c4cdcf")
+                    }
+
+                });
+              if (valuePresentInSearchList==false){
+					$("#clientes").css("border-color", "red")
+					esValido = false;
+				}	else {
+						console.log("THISSS 1",$(this))
+                        $("#clientes").css("border-color", "#c4cdcf")
+                    }
+					if (eventValuePresentInSearchList==false){
+							$("#eventos").css("border-color", "red")
+							esValido = false;
+						}	else {
+								console.log("THISSS2", $(this))
+		                        $("#eventos").css("border-color", "#c4cdcf")
+		                    }
+
+
+
+            }
+			console.log("VERIFICAEXISTE1",valuePresentInSearchList)
+			console.log("VERIFICAEXISTE2",eventValuePresentInSearchList)
+
+            if (step == 2) {
+                if ($('#idiomasSeleccion :selected').length == 0) {
+                    esValido = false;
+                    $('#idiomasSeleccion').css("color", "red")
+                } else {
+                    $('#idiomasSeleccion').css("color", "#b5b5b5")
+                }
+
+
+            }
+            if (step == 3) {
+                $('#paso3').find("input").each(function() {
+                    if ($(this).val() == "") {
+                        $(this).css("border-color", "red")
+                        esValido = false;
+                    } else {
+                        $(this).css("border-color", "#c4cdcf")
+                    }
+
+                });
+
+            }
+			if (step == 4) {
+                if ($(".subtemplate-wrapper").length ==0){
+						esValido = false;
+						alert("No puede dejar el Creador de Encuesta vacio!")
+					}
+
+            }
+            if (step == 5) {
+                $('#paso5').find("input").each(function() {
+                    if ($(this).val() == "") {
+                        $(this).css("border-color", "red")
+                        esValido = false;
+                    } else {
+                        $(this).css("border-color", "#c4cdcf")
+                    }
+
+                });
+
+            }
+console.log("DAA:E")
+            return true;
+        };
+    </script>
+
+</body>
+
+</html>

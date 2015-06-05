@@ -1,0 +1,31 @@
+<div class='fr_bottom_bar fr_cf'>
+  <% if @form_renderer.options.enableAutosave: %>
+    <div class='fr_bottom_bar_l'>
+      <% if @form_renderer.state.get('hasServerErrors'): %>
+        Error saving
+      <% else if @form_renderer.state.get('hasChanges'): %>
+        Saving...
+      <% else: %>
+        Saved
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class='fr_bottom_bar_r'>
+    <% if !@firstPage(): %>
+      <button data-js-back class='<%= FormRenderer.BUTTON_CLASS %>'>
+        Back to page <%= @previousPage() %>
+      </button>
+    <% end %>
+
+    <% if @form_renderer.state.get('submitting'): %>
+      <button disabled class='<%= FormRenderer.BUTTON_CLASS %>'>
+        Submitting...
+      </button>
+    <% else: %>
+      <button data-js-continue class='<%= FormRenderer.BUTTON_CLASS %>'>
+        <% if (@lastPage() || !@form_renderer.options.enablePages): %>Submit<% else: %>Next page<% end %>
+      </button>
+    <% end %>
+  </div>
+</div>

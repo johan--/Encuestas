@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if IE 9]>					<html class="ie9 no-js" lang="en-US">  <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+	<head>
+		<!-- Google Web Fonts
+		================================================== -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,500,700%7cCourgette%7cRaleway:400,700,500%7cCourgette%7cLato:700' rel='stylesheet' type='text/css'>
+
+		<!-- Basic Page Needs
+		================================================== -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>Forms</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Specific Metas
+		================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- CSS
+		================================================== -->
+		<link rel="stylesheet" href="css/tmm_form_wizard_style_demo.css" />
+		<link rel="stylesheet" href="css/grid.css" />
+		<link rel="stylesheet" href="css/tmm_form_wizard_layout.css" />
+		<link rel="stylesheet" href="css/fontello.css" />
+		<link rel="stylesheet" href="../vendor/css/vendor.css" />
+  <link rel="stylesheet" href="../dist/formbuilder.css" />
+
+	</head>
+	<body>
+
+
+		<!-- - - - - - - - - - - - - Content - - - - - - - - - - - - -  -->
+
+
+		<div id="content">
+
+			<div class="form-container" style="
+			    width: 2000x";>
+
+				<div id="tmm-form-wizard" class="container substrate" style="
+				    width: 2000px";>
+
+					<div class="row">
+
+						<div class="col-xs-12">
+							<h2 class="form-login-heading">Generador de Encuestas<span></span></h2>
+						</div>
+
+					</div><!--/ .row-->
+
+					<div class="row stage-container">
+							<div class="stage tmm-current col-md-3 col-sm-3"  id="stage1">
+								<div class="stage-header head-icon head-icon-lock"></div>
+								<div class="stage-content">
+										<h3 class="stage-title">Informacion General</h3>
+										<div class="stage-info">
+											Ingrese informacion general de la encuesta
+									</div>
+								</div>
+							</div><!--/ .stage-->
+
+
+
+
+
+							<div class="stage  col-md-3 col-sm-3" id="stage2">
+								<div class="stage-header head-icon head-icon-user"></div>
+								<div class="stage-content">
+									<h3 class="stage-title">Seleccion Idiomas</h3>
+									<div class="stage-info">
+										Elija los idiomas deseados de la encuestas
+									</div>
+								</div>
+							</div><!--/ .stage-->
+								<div class="stage  col-md-3 col-sm-3" id="stage3">
+									<div class="stage-header head-icon head-icon-payment"></div>
+									<div class="stage-content">
+										<h3 class="stage-title">Texto Introduccion</h3>
+										<div class="stage-info">
+											Ingrese el texto introductorio
+										</div>
+									</div>
+								</div><!--/ .stage-->
+
+
+
+
+
+								<div class="stage col-md-3 col-sm-3" id="stage4">
+									<div class="stage-header head-icon head-icon-details"></div>
+									<div class="stage-content">
+										<h3 class="stage-title">Generar Preguntas</h3>
+										<div class="stage-info">
+											Cree las preguntas se su encuesta
+										</div>
+									</div>
+								</div><!--/ .stage-->
+									<div class="stage  col-md-3 col-sm-3" id="stage5">
+										<div class="stage-header head-icon head-icon-payment"></div>
+										<div class="stage-content">
+											<h3 class="stage-title">Texto Finalizacion</h3>
+											<div class="stage-info">
+												Ingrese el texto Final
+											</div>
+										</div>
+									</div><!--/ .stage-->
+										<div class="stage col-md-3 col-sm-3" id="stage6">
+											<div class="stage-header head-icon head-icon-details"></div>
+											<div class="stage-content">
+												<h3 class="stage-title">Confirma la encuesta</h3>
+												<div class="stage-info">
+													Guarda la encuesta
+												</div>
+											</div>
+										</div><!--/ .stage-->
+
+
+					</div><!--/ .row-->
+
+					<div class="row">
+
+						<div class="col-xs-12">
+
+							<div class="form-header">
+
+								<div class="form-title form-icon title-icon-user">
+									<b>Informacion</b> General
+								</div>
+								<div class="steps">
+									Paso 1 - 6
+								</div>
+
+							</div><!--/ .form-header-->
+
+						</div>
+
+					</div><!--/ .row-->
+
+					<form action="/" role="form" >
+
+						<div class="form-wizard" id="paso1">
+
+							<div class="row">
+
+								<div class="col-md-8 col-sm-7">
+
+									<div class="row">
+
+										<div class="col-md-4 col-sm-4">
+
+
+
+
+											<div class="input-block">
+												<label>Cliente</label>
+												<div class="dropdown">
+													<select name="salut" class="dropdown-select">
+														<option value="1">Coca Cola</option>
+														<option value="2">Pepsi</option>
+													</select>
+												</div><!--/ .dropdown-->
+												
+											</div><!--/ .input-role-->
+
+										</div>
+
+										<div class="col-md-8 col-sm-8">
+
+											<fieldset class="input-block">
+												<label>Objetivo</label>
+													<input type="text" id="first-name" placeholder="Evento" required />
+
+											</fieldset><!--/ .input-role-->
+
+										</div>
+
+									</div><!--/ .row-->
+
+									<div class="row">
+
+										<div class="col-md-6 col-sm-6">
+											<fieldset class="input-block">
+												<label for="first-name">Ingresar logo de encuesta</label>
+												<input type="text" id="first-name" placeholder="Name" required />
+												
+											</fieldset><!--/ .input-first-name-->
+										</div>
+
+										<div class="col-md-6 col-sm-6">
+											<fieldset class="input-block">
+												<label for="last-name">Multiples respuestas por usuario</label>
+												<input type="checkbox" id="last-name" placeholder="Surname" required />
+									
+											</fieldset><!--/ .input-first-name-->
+										</div>
+
+									</div><!--/ .row-->
+
+
+
+
+									<div class="row">
+
+										<div class="col-md-4 col-sm-4">
+											<fieldset class="input-block">
+												<label for="zip-code">Ingresar Fecha Inicio</label>
+												<input type="text" id="zip-code" class="datepicker "placeholder="Inicio en.." required />
+											
+											</fieldset><!--/ .code-->
+										</div>
+
+										<div class="col-md-8 col-sm-8">
+									
+										</div>
+
+									</div><!--/ .row-->
+
+
+
+								</div>
+
+							</div><!--/ .row-->
+
+						</div><!--/ .form-wizard-->
+						<div class="form-wizard" id="paso2" style="display:none">
+
+							<div class="row">
+
+								<div class="col-md-8 col-sm-7">
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-12">
+											<fieldset class="input-block">
+												<label>Idiomas</label>
+												<div class="dropdown">
+													<select id="idiomasSeleccion" name="card-type" class="dropdown-select" multiple="true" style="
+    height: 100%;
+">
+														<option value="1">Español</option>
+														<option value="2">Ingles</option>
+														<option value="2">Aleman</option>
+														<option value="2">Ruso</option>
+													</select>
+												</div><!--/ .input-dropdown-->
+											</fieldset><!--/ .input-card-type-->
+										</div>
+
+									</div><!--/ .row-->
+
+
+								</div>
+
+							</div><!--/ .row-->
+
+						</div><!--/ .form-wizard-->
+						<div class="form-wizard" id="paso3" style="display:none">
+
+							<div class="row">
+
+								<div class="col-md-8 col-sm-7">
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-12">
+											<fieldset class="input-block">
+												<label>Texto Introduccion</label>
+												<input type="text" id="zip-code" placeholder="Texto" required />
+											</fieldset><!--/ .input-card-type-->
+										</div>
+
+									</div><!--/ .row-->
+
+
+								</div>
+
+							</div><!--/ .row-->
+
+						</div><!--/ .form-wizard-->
+	<div class="form-wizard" id="paso4" style="display:none">
+
+							<div class="row">
+
+								<div class="col-md-8 col-sm-7">
+
+									<div class="row">
+
+										<div class="col-md-12 col-sm-12">
+										<a href="#" id="verPreview">Ver Preview Encuestas</a>
+											<div class='fb-main'></div>
+										</div>
+
+									</div><!--/ .row-->
+
+
+								</div>
+
+							</div><!--/ .row-->
+
+						</div><!--/ .form-wizard-->
+
+					<div class="prev">
+							<button class="button button-control" type="button" id="anterior"><span>Anterior Paso <b></b></span></button>
+							<div class="button-divider"></div>
+						</div>
+						<div class="next">
+							<button class="button button-control" type="button" id="proximo"><span>Proximo Paso <b></b></span></button>
+							<div class="button-divider"></div>
+						</div>
+
+					</form><!--/ form-->
+			
+
+				</div><!--/ .container-->
+
+			</div><!--/ .form-container-->
+
+		</div><!--/ #content-->
+
+
+		<!-- - - - - - - - - - - - end Content - - - - - - - - - - - - - -->
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="../vendor/js/vendor.js"></script>
+  <script src="../dist/formbuilder.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+		<!--[if lt IE 9]>
+				<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+		<script src="js/tmm_form_wizard_custom.js"></script>
+		<script>
+		 var idiomas=[];
+    $( document ).ready(function() {
+		var pasoNumero=1;
+		
+		 		var cantidadElementos=0;
+
+  
+        $( "#proximo" ).click(function() {
+			$( "#paso"+pasoNumero).css("display","none")
+			$( "#stage"+pasoNumero).removeClass("tmm-current")
+			$( "#stage"+pasoNumero).addClass("tmm-success")
+		
+		
+			if (pasoNumero==2){
+				$('#idiomasSeleccion :selected').each(function(i, selected){ 
+				var foo = []; 
+				foo[i] = $(selected).text();
+				if (cantidadElementos==0){
+					idiomas.push(foo[i])
+					cantidadElementos++
+				}else{
+					idiomas.push(foo[i])
+				}
+			
+	
+		});
+		
+		}
+			console.log("ID",idiomas)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			pasoNumero++;	
+			$( "#paso"+pasoNumero).css("display","block")
+			$( "#stage"+pasoNumero).addClass("tmm-current")
+			
+		});
+		 $( "#anterior" ).click(function() {
+			$( "#paso"+pasoNumero).css("display","none")
+			$( "#stage"+pasoNumero).removeClass("tmm-current")
+			pasoNumero--;	
+			$( "#paso"+pasoNumero).css("display","block")
+			$( "#stage"+pasoNumero).addClass("tmm-current")
+			$( "#stage"+pasoNumero).removeClass("tmm-success")
+			
+		});
+		
+      $(function(){
+      fb = new Formbuilder({
+        selector: '.fb-main',
+        bootstrapData: [
+          
+        ]
+      });
+
+      fb.on('save', function(payload){
+        console.log(payload);
+		formInfo=payload;
+      })
+    });
+   
+	$("#verPreview").click(function() {
+	window.open("http://belasoft.com.ar/encuestarubra/render/examples/index.html?json="+formInfo);
+	//
+		
+	});
+	  $( ".datepicker" ).datepicker();
+    });
+ 
+    
+    </script>
+
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<% for option, i in @model.getOptions(): %>
+  <label class='fr_option control'>
+    <input type='checkbox' data-rv-checked='model.value.<%= i %>' />
+    <%= option.label %>
+  </label>
+<% end %>
+
+<% if @model.get('field_options.include_other_option'): %>
+  <div class='fr_option fr_other_option'>
+    <label class='control'>
+      <input type='checkbox' data-rv-checked='model.value.other_checkbox' />
+      Other
+    </label>
+
+    <input type='text' data-rv-input='model.value.other' />
+  </div>
+<% end %>
