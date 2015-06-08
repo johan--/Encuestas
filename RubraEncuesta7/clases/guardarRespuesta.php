@@ -16,10 +16,9 @@ if (isset($_POST["info"])) {
 
 	//Busco si tiene mail
 	$contieneMail="";
-	print_r("HOLAS");
+
 	//while( $rta = each($respuestas) && $contieneMail=="" ) {
 	foreach ($respuestas as &$rta) {
-			print_r("VAN");
 		$res=json_decode($rta);
 		$cid=$res->cid;
 		$valueRta=$res->val;
@@ -39,7 +38,6 @@ if (isset($_POST["info"])) {
 			break;
 		}
 	}
-		print_r("YVIENEN");
 
 
 	//Inserto datos del encuestado
@@ -48,6 +46,8 @@ if (isset($_POST["info"])) {
 	$result=mysqli_query($db,$insert);
 	
 	$idEncuestado=mysqli_insert_id($db);;
+
+
 
 	foreach ($respuestas as &$rta) {
 		$res=json_decode($rta);
@@ -64,7 +64,9 @@ if (isset($_POST["info"])) {
 		
 	}
 
-
+	include("notif/enviarEncuestaCompletada.php");
+	
+	
 } else {
 	print_r ("ERROR");	
 }
