@@ -7,7 +7,7 @@ if (isset($_POST["info"])) {
 	
 	$id=$info->idCliente; 
 	
-	$select="SELECT `Id`, `Nombre`, `idCliente`, `Descripcion`, `FechaInicio`, `FechaFin`, `Estado` FROM `eventos` WHERE idCliente = '".$id."' AND `Estado` like 'A'; ";
+	$select="SELECT `Id`, `Nombre`, `idCliente`, `Descripcion`, `FechaInicio`, `FechaFin`,`imagen_ruta`,`imagen_nombre`, `Estado` FROM `eventos` WHERE idCliente = '".$id."' AND `Estado` like 'A'; ";
 	
 		//CONSULTA
 		$result=mysqli_query($db,$select);
@@ -22,6 +22,8 @@ if (isset($_POST["info"])) {
 				$item['descripcion']=$row ["Descripcion"];
 				$item['fechaInicio']=$row ["FechaInicio"];
 				$item['fechaFin']=$row ["FechaFin"];
+				$item['imagen_ruta_eve']=$row ["imagen_ruta"];
+				$item['imagen_nombre_eve']=$row ["imagen_nombre"];				
 				$item['estado']=$row ["Estado"];
 				array_push($lista,$item);
 		}
