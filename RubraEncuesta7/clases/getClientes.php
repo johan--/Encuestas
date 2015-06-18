@@ -2,7 +2,7 @@
 include("db.php");
 session_start();
 
-$select="SELECT `Id`, `RazonSocial`, `ImagenLogo`, `Comentario`, `Estado` FROM `clientes` WHERE `Estado`='A'; ";
+$select="SELECT `Id`, `RazonSocial`, `ImagenLogo`, `Comentario`,`imagen_ruta`,`imagen_nombre`, `Estado` FROM `clientes` WHERE `Estado`='A'; ";
 
 	//CONSULTA
 	$result=mysqli_query($db,$select);
@@ -15,6 +15,8 @@ $select="SELECT `Id`, `RazonSocial`, `ImagenLogo`, `Comentario`, `Estado` FROM `
 			$item['label']=$row ["RazonSocial"];
 			//$item['ImagenLogo']=$row ["ImagenLogo"];
 			$item['comentario']=$row ["Comentario"];
+			$item['imagen_ruta_cli']=$row ["imagen_ruta"];
+			$item['imagen_nombre_cli']=$row ["imagen_nombre"];				
 			$item['estado']=$row ["Estado"];
 			array_push($lista,$item);
 	}
