@@ -1,4 +1,4 @@
-<?php
+<strong><strong></strong></strong><?php
 include("../../RubraEncuesta7/clases/mostrarEncuestaValida.php");
 
 $time = time();
@@ -8,7 +8,7 @@ $fechaFin = $lista['fechaFin'];
 $estado = $lista['estado'];
 
 if ($estado == "A" && $fechaFin >= $fechaActual  ){
-	
+
 
 ?>
 
@@ -25,12 +25,12 @@ if ($estado == "A" && $fechaFin >= $fechaActual  ){
 
   body {
   /*  background-color: #eee;*/
-    background-image: url('/encuestarubra/RubraEncuesta7/images/trama_fondo.png'); 
-background-repeat: repeat; 
-background-size: 50%; 
+    background-image: url('/encuestarubra/RubraEncuesta7/images/trama_fondo.png');
+background-repeat: repeat;
+background-size: 50%;
 
 
-	
+
   }
 
   form {
@@ -72,7 +72,7 @@ form {
 	border: 0px;
 /*    color: #EAE9E9; */
 	color: #C7D9FF;
-    font-size: 25px;	
+    font-size: 25px;
 }
 
 input[type="text"],
@@ -116,7 +116,7 @@ select {
 
 .control {
   padding-top: 10px;
-  color: #3D3737;	
+  color: #3D3737;
   padding-left: 25px;
 }
 
@@ -180,10 +180,10 @@ label.light {
   border-radius: 100%;
 }
 
-textarea {  
+textarea {
   width: 100%px !important;
   height: 150px !important;
- } 
+ }
 
 @media screen and (min-width: 480px) {
 
@@ -197,8 +197,8 @@ textarea {
   </style>
 </head>
 <body>
- 
- 
+
+
 
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -214,16 +214,16 @@ var textoFinal;
       FormRenderer.BUTTON_CLASS = 'button button-primary'
 
       FormRenderer.prototype.save = function(options){
-	   
+
         console.log("AHORA",this.getValue(),options);
-		
+
 		$("#textoInicial").remove();
         this.state.set({
           hasChanges: false
         });
         if (options && options.success) {
 		console.log ("ENTRACAM")
-		
+
 		  guardarDatosEncuesta();
           options.success();
         }
@@ -237,12 +237,12 @@ var textoFinal;
 	  console.log("GUARRRDA")
 	  //GUARDO PARRAFOS
 	  $('.fr_response_field_paragraph').find("textarea").each(function () {
-	  
+
 	   respuesta.push('{"cid":"'+$(this).attr('id')+'","val":"'+$(this).val()+'","tipo":"parrafo"}');
 	  })
 	  //Guardo Textos
 	  $('.fr_response_field_text, .fr_response_field_number, .fr_response_field_website, .fr_response_field_email').find("input:text").each(function () {
-	  
+
 	   respuesta.push('{"cid":"'+$(this).attr("id")+'","val":"'+$(this).val()+'"}');
 	  })
 	  //Guardo Combos
@@ -251,13 +251,13 @@ var textoFinal;
 	   respuesta.push('{"cid":"'+$(this).attr("id")+'","val":"'+$(this).find("option:selected").val()+'","tipo":"combo"}')
 	  })
 	  console.log("SELECIONA",$('.fr_response_field_radio').find("input:checked"))
-	  
-	  
+
+
 	  $('.fr_response_field_radio').each(function () {
-	  
+
 		if ($(this).find("input:checked").length>0){
-			respuesta.push('{"cid":"'+$('.fr_response_field_radio').find("input:checked").attr("id")+'","val":"'+$('.fr_response_field_radio').find("input:checked").val()+'","tipo":"radio"}')
-			
+			respuesta.push('{"cid":"'+$(this).find("input:checked").attr("id")+'","val":"'+$(this).find("input:checked").val()+'","tipo":"radio"}')
+
 	  }
         //console.log("DALEID",$(this).attr("id"))
 	   //respuesta.push("{"cid":"+$(this).attr("id")+",val:"+$(this).find("option:selected").val()+"}")
@@ -267,16 +267,16 @@ var textoFinal;
 		  var value=  $(this).parent().text();
 		//if ($(this).find("input:checked").length>0){
 			respuesta.push('{"cid":"'+id+'","val":"'+value.replace(/\s+/g, '')+'","tipo":"check"}')
-			
+
 	 // }
         //console.log("DALEID",$(this).attr("id"))
 	   //respuesta.push("{"cid":"+$(this).attr("id")+",val:"+$(this).find("option:selected").val()+"}")
 	  })
-	  
-	  
-	  
+
+
+
 	  //Guardo Hora
-	   $('.fr_response_field_time').each(function (){ 
+	   $('.fr_response_field_time').each(function (){
 	   var horarioFinal="";
 	   var cid;
 	          $(this).find("input").each(function () {
@@ -289,9 +289,9 @@ var textoFinal;
 			  })
 	   respuesta.push('{"cid":"'+cid+'","val":"'+horarioFinal+'"}');
 	  })
-	  
-	  
-	  
+
+
+
 		console.log("RESPUESTA",respuesta)
 	   enviarRespuesta(respuesta)
 	 }
@@ -308,7 +308,7 @@ var textoFinal;
           new FormRenderer(_.extend(campos, {
             "afterSubmit": { method: 'page', html: textoFinal }
           }))
-     
+
       }
 	  	function getParameterByName(name) {
 	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -316,7 +316,7 @@ var textoFinal;
 	        results = regex.exec(location.search);
 	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
-	
+
 	 	function enviarRespuesta(respuesta) {
 		var objetoFinal={}
 		objetoFinal["ehIdi"]=getParameterByName("ehIdi");
@@ -325,16 +325,16 @@ var textoFinal;
 		$.ajax({
 		    url: '../../RubraEncuesta7/clases/guardarRespuesta.php',
 		    type: 'post',
-		   
+
 			data: {"info" : JSON.stringify(objetoFinal)},
 		    success: function(msg) {
-		
+
 
 		    }
 		});
 	   }
-	
-	
+
+
 	$( document ).ready(function() {
 	    var datosEncuesta={}
 	  datosEncuesta.ehIdi=getParameterByName("ehIdi")
@@ -365,16 +365,16 @@ var textoFinal;
 
 		    }
 		});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 	});
 	function getParameterByName(name) {
 	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -387,15 +387,27 @@ var textoFinal;
 <!-- <input name="cliente" type="text" id="cliente" style="width: 50%;" disabled /> -->
 <!-- 	<input name="evento" type="text" id="evento"  style="width: 49%;" disabled /> -->
 	<div style="width:100%">
-	 <img src="http://belasoft.com.ar/encuestarubra/RubraEncuesta7/images/rubralogo3.png" alt="Smiley face" height="220px" width="220px" style="margin-left: 20%;   opacity: 0.9;">	
- 	 <img src="http://belasoft.com.ar/encuestarubra/RubraEncuesta7/images_sys/takeda.png" alt="Smiley face" height="200px" width="200px" style="margin-left: 10%; vertical-align: top;">
+	 <img src="http://belasoft.com.ar/encuestarubra/RubraEncuesta7/images/rubralogo3.png" alt="Smiley face" height="220px" width="220px" style="margin-left: 18%;   opacity: 0.9;">
+     <?php if ($lista['imagen_nombre_cli'] <> ""){ ?>
+	   	 <?php if ($lista['imagen_nombre_eve'] <> ""){ ?>
+             <img src="<?php echo $lista['imagen_ruta_eve'].$lista['imagen_nombre_eve'] ?>" alt="Smiley face" height="200px" width="200px" style="margin-left: 10%; vertical-align: top;">
+             <img src="<?php echo $lista['imagen_ruta_cli'].$lista['imagen_nombre_cli'] ?>" alt="Smiley face" height="200px" width="200px" style="margin-left: 2%; vertical-align: top;">     
+		 <?php } else { ?>
+		 	 <img src="<?php echo $lista['imagen_ruta_cli'].$lista['imagen_nombre_cli'] ?>" alt="Smiley face" height="200px" width="200px" style="margin-left: 20%; vertical-align: top;">              
+		 <?php } ?>              
+	 <?php } else { ?>              
+	   	 <?php if ($lista['imagen_nombre_eve'] <> ""){ ?>
+		 	 <img src="<?php echo $lista['imagen_ruta_eve'].$lista['imagen_nombre_eve'] ?>" alt="Smiley face" height="200px" width="200px" style="margin-left: 20%; vertical-align: top;">              
+		 <?php } ?>
+   	 <?php } ?>              
+
 	</div>
     <hr />
     <form ><h1>Bienvenido / Welcome </h1><input name="textoInicial" type="text" id="textoInicial"  value="Cargando..."  disabled /></form>
- 
+
 <form data-formrenderer action="index.html" method="post">
-      
-   
+
+
       </form>
 	   </div>
 </body>
@@ -404,7 +416,7 @@ var textoFinal;
 <?php
 
 } else {
-	
+
 ?>
 <!doctype html>
 <html>
@@ -414,28 +426,28 @@ var textoFinal;
 
   body {
   /*  background-color: #eee;*/
-    background-image: url('/encuestarubra/RubraEncuesta7/images/trama_fondo.png'); 
-	background-repeat: repeat; 
-	background-size: 50%; 
+    background-image: url('/encuestarubra/RubraEncuesta7/images/trama_fondo.png');
+	background-repeat: repeat;
+	background-size: 50%;
 
   }
-  
+
   .contenedor {
   margin-left: 25%;
   margin-top: 10%;
   border-radius: 20px;
   background-color: #D5D5D5;
   width: 50%;
-  height: 100px;	  
+  height: 100px;
   }
-  
+
   .texto {
 	color: #9B9B9B;
  	margin-left: 30%;
   	padding-top: 20px;
-  	height: 100px;   
+  	height: 100px;
   }
-  </style>  
+  </style>
 </head>
 <body>
 <div class="contenedor">
@@ -446,6 +458,6 @@ var textoFinal;
 
 
 
-<?php		
+<?php
 }
 ?>
